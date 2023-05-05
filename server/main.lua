@@ -792,6 +792,7 @@ RegisterNetEvent('police:server:JailPlayer', function(playerId, time)
         ["hasRecord"] = true,
         ["date"] = currentDate
     })
+
     TriggerClientEvent("police:client:SendToJail", OtherPlayer.PlayerData.source, time)
     TriggerClientEvent('QBCore:Notify', src, Lang:t("info.sent_jail_for", {time = time}))
 end)
