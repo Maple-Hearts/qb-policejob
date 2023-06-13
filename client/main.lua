@@ -77,7 +77,6 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
         end
         DutyBlips = {}
     end
-    
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()

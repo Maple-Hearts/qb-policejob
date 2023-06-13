@@ -168,8 +168,8 @@ end
 
 local function SetWeaponSeries()
     for k, _ in pairs(Config.Items.items) do
-        if k < 6 then
-            Config.Items.items[k].info.serie = tostring(QBCore.Shared.RandomInt(2) .. QBCore.Shared.RandomStr(3) .. QBCore.Shared.RandomInt(1) .. QBCore.Shared.RandomStr(2) .. QBCore.Shared.RandomInt(3) .. QBCore.Shared.RandomStr(4))
+        if QBCore.Shared.Items[v.name].type == 'weapon' then
+            Config.Items.items[k].info.serie = 'pd-'..tostring(QBCore.Shared.RandomInt(2) .. QBCore.Shared.RandomStr(3) .. QBCore.Shared.RandomInt(1) .. QBCore.Shared.RandomStr(2) .. QBCore.Shared.RandomInt(3) .. QBCore.Shared.RandomStr(4))
         end
     end
 end

@@ -516,6 +516,7 @@ QBCore.Commands.Add('911p', Lang:t("commands.police_report"), {{name='message', 
             TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, message)
         end
     end
+    TriggerEvent('qb-log:server:CreateLog', 'police', '911p Created', 'yellow', ('**Name:** %s | **License:** ||(%s)||\n **Info:** %s '):format(GetPlayerName(src), Player.PlayerData.license, message))
 end)
 
 -- Items
@@ -1112,4 +1113,9 @@ CreateThread(function()
         Wait(5000)
         UpdateBlips()
     end
+end)
+
+
+RegisterNetEvent('notifyCuffBreak', function(playerId)
+    TriggerClientEvent('QBCore:Notify', playerId, "Seems this person broke out of their handcuffs.", "error", 5000)
 end)
